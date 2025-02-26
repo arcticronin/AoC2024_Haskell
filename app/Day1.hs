@@ -1,6 +1,8 @@
 module Main where
 import Data.List (transpose, sortOn)
 
+-- DAY 1
+
 parseFile :: FilePath -> IO ([Integer], [Integer])
 parseFile filePath = do
     contents <- readFile filePath
