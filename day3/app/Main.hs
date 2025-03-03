@@ -20,8 +20,11 @@ parseFile filePath = do
     contents <- readFile filePath
     return (extractMulPairs contents)
 
+part1:: [(Integer, Integer)] -> Integer
+part1 = sum . map (uncurry (*))
+
 main :: IO ()
 main = do
-    let filePath = "test.txt"  -- Change the file path if needed
+    let filePath = "input.txt"  -- Change the file path if needed
     mulPairs <- parseFile filePath
-    print mulPairs
+    print $ part1 mulPairs
